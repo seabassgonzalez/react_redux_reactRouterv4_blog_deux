@@ -5,3 +5,5 @@
 		// return
 			// div
 				// goodbye	
+
+import React, { Component } from 'react';
