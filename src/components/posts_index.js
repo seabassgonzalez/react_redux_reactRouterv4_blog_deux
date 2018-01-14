@@ -8,7 +8,10 @@
 		// return
 			// div simple placeholder text
 
-// export default connect null, {fetchPosts} PostsIndex instead of using mapDispatchToProps
+// define mapStateToProps function to consume application level state
+	// return posts: from state.posts
+
+// export default connect mapStateToProps, {fetchPosts} PostsIndex instead of using mapDispatchToProps
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -20,9 +23,15 @@ class PostsIndex extends Component {
 	}
 	render(){
 		return(
-			<div>Posts Index</div>
+			<div>Posts Index</div> // comment to clean up syntax highlighting
 		);
 	}
 }
 
-export default connect(null, { fetchPosts })(PostsIndex);
+function mapStateToProps(state){
+	return {
+		posts: state.posts
+	};
+}
+
+export default connect(mapStateToProps, { fetchPosts })(PostsIndex);
