@@ -21,7 +21,7 @@ const API_KEY = '?key=seabassgonzalez02';
 export function fetchPosts(){
 	const request = axios.get(`${ROOT_URL}/posts${API_KEY}`);
 	return{
-		type: FETCH_POSTS
+		type: FETCH_POSTS,
 		payload: request
 	};
 }
