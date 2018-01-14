@@ -4,7 +4,10 @@
 // import createStore and applyMimddleware from redux
 
 // import App from components/app
+// import Hello from components/hello
+// import Goodbye from components/goodbye
 // import reducers from reducers
+
 
 // create const createStoreWithMiddleware set to applyMiddleware() call passing in createStore			
 
@@ -21,6 +24,8 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/app';
+import Hello from './components/hello';
+import Goodbye from './components/goodbye';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
