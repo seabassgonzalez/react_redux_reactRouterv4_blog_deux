@@ -4,17 +4,16 @@
 // import createStore and applyMimddleware from redux
 // import BrowserRouter Route from react-router-dom
 
-// import App from components/app
-// import Hello from components/hello
-// import Goodbye from components/goodbye
+// import PostsIndex from components/posts_index
 // import reducers from reducers
-
 
 // create const createStoreWithMiddleware set to applyMiddleware() call passing in createStore			
 
 // ReactDOM.render
 	// provider component with store property set to object callback to createStoreWithMiddleware passing reducers
-		// app component
+		// BrowserRouter component
+			// single child div
+				// Routes
 	// second argument to .render being location to render to
 
 	
@@ -25,9 +24,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import App from './components/app';
-import Hello from './components/hello';
-import Goodbye from './components/goodbye';
+import PostIndex from './components/posts_index';
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
@@ -36,9 +33,7 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
   	<BrowserRouter>
   		<div>
-  			<Route path="/" component={App} />
-	  		<Route path="/hello" component={Hello} />
-	  		<Route path="/goodbye" component={Goodbye} />
+  			<Route path="/" component={PostsIndex} />
 	  	</div>
   	</BrowserRouter>
   </Provider>
