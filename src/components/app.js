@@ -10,7 +10,7 @@ import React, { Component } from 'react';
 export default class App extends Component {
 	render(){
 		return (
-			<div>Simple text placeholder</div>
+			<div>React Redux React Router v4 Blog</div>
 		);
 	}
 }
