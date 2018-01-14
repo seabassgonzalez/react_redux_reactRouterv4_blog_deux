@@ -22,6 +22,7 @@ class PostsIndex extends Component {
 		this.props.fetchPosts();
 	}
 	render(){
+		console.log('posts are: ', this.props.posts);
 		return(
 			<div>Posts Index</div> // comment to clean up syntax highlighting
 		);
