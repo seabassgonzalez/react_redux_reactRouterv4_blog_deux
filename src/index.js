@@ -6,7 +6,7 @@
 // import App from components/app
 // import reducers from reducers
 
-// create const createStoreWithMiddleware set to applyMiddleware() call passing in createStore
+// create const createStoreWithMiddleware set to applyMiddleware() call passing in createStore			
 
 // ReactDOM.render
 	// provider component with store property set to object callback to createStoreWithMiddleware passing reducers
