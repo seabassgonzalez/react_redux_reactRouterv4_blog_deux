@@ -6,7 +6,10 @@
 	// use componentDidMount lifecycle method as will be called as soon as rendered to dom            
 	// render
 		// return
-			// div simple placeholder text
+			// div 
+				// h3 Posts
+					// ul
+						// call to helper function this.renderPosts()
 
 // define mapStateToProps function to consume application level state
 	// return posts: from state.posts
@@ -24,7 +27,12 @@ class PostsIndex extends Component {
 	render(){
 		console.log('posts are: ', this.props.posts);
 		return(
-			<div>Posts Index</div> // comment to clean up syntax highlighting
+			<div>
+				<h3>Posts</h3>
+				<ul className="list-group">
+					{this.renderPosts()}
+				</ul>
+			</div> // comment to clean up syntax highlighting
 		);
 	}
 }
