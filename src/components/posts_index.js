@@ -14,7 +14,7 @@
 		// return
 			// div 
 				// div bootstrap className text-xs-right to push it to the right of the screen
-				// link component bootstrap className btn btn-primary
+					// link component bootstrap className btn btn-primary, to property set to route like href anchor tag
 				// h3 Posts
 					// ul
 						// call to helper function this.renderPosts()
@@ -47,8 +47,8 @@ class PostsIndex extends Component {
 		console.log('posts are: ', this.props.posts);
 		return(
 			<div>
-				<div className="text-xs-right">
-					<Link className="btn btn-primary">
+				<div className="text-right">
+					<Link className="btn btn-primary" to="/posts/new">
 						Add a Post
 					</Link>
 				</div>
