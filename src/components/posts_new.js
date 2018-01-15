@@ -2,16 +2,11 @@
 // import Field and reduxForm from redux-form
 
 // class PostsNew extends Component
-	// create function renderTitleField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
+	// create function renderField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
 		// return
 			// div bootstrap className form-group
 				// Label Title
 				// input with property {...field.input} bootstrap className form-control
-	// create renderTagsField function
-		// return
-			// div
-				// label title
-				// input
 	// render
 		// return
 			// form
@@ -28,7 +23,7 @@ import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component{
-	renderTitleField(field){
+	renderField(field){
 		return(
 			<div className="form-group">
 				<label>Title</label>
@@ -40,19 +35,16 @@ class PostsNew extends Component{
 			</div> // comment to clear syntax highlighting
 		);
 	}
-	renderTagsField(){
-		
-	}
 	render(){
 		return(
 			<form>
 				<Field
 					name="title"
-					component={this.renderTitleField}
-				/>
+					component={this.renderField}
+				/> 
 				<Field
 					name="tags"
-					component={this.renderTagsField}
+					component={this.renderField}
 				/>
 			</form> // comment to clean up syntax highlighting
 		);
