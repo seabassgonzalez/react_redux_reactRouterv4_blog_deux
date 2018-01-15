@@ -1,6 +1,7 @@
 // import React and Component from react
 // import connect from react-redux
 // import fetchPosts action creator from /actions
+// import Link from react-router-dom
 // import _ from lodash
 
 // class PostsIndex extends Component
@@ -12,6 +13,8 @@
 	// render
 		// return
 			// div 
+				// div bootstrap className text-xs-right to push it to the right of the screen
+				// link component bootstrap className btn btn-primary
 				// h3 Posts
 					// ul
 						// call to helper function this.renderPosts()
@@ -24,6 +27,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPosts } from '../actions';
+import { Link } from 'react-router-dom';
 import _ from 'lodash';
 
 class PostsIndex extends Component {
@@ -43,6 +47,11 @@ class PostsIndex extends Component {
 		console.log('posts are: ', this.props.posts);
 		return(
 			<div>
+				<div className="text-xs-right">
+					<Link className="btn btn-primary">
+						Add a Post
+					</Link>
+				</div>
 				<h3>Posts</h3>
 				<ul className="list-group">
 					{this.renderPosts()}
