@@ -7,6 +7,7 @@
 			// div bootstrap className form-group
 				// Label Title
 				// input with property {...field.input} bootstrap className form-control
+			// reference meta.error property automatically added to field object from validate function, reference it here to show errors
 	// render
 		// return
 			// form
@@ -47,6 +48,7 @@ class PostsNew extends Component{
 					type="text"
 					{...field.input}
 				/>
+				{field.meta.error}
 			</div> // comment to clear syntax highlighting
 		);
 	}
