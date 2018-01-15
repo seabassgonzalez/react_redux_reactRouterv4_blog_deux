@@ -23,7 +23,7 @@
 					// label Post Content
 					// name property set to tags
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
-
+				// button type submit classname btn btn-primary value Submit
 // create function validate to pass to reduxForm helper, takes argument values
 	// const error set to an empty object
 	//  if no values.title -- validate the inputs from values -- can add stipulations like string length
@@ -70,6 +70,7 @@ class PostsNew extends Component{
 					name="content"
 					component={this.renderField}
 				/>
+				<button type="submit" className="btn btn-primary">Submit</button>
 			</form> // comment to clean up syntax highlighting
 		);
 	}
