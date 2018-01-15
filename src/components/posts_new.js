@@ -23,7 +23,9 @@
 					// name property set to tags
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
 
-// export default redux form helper to connect component to reducer, first arument object key property form set to unique string, second argument PostsNew
+// create function validate to pass to reduxForm helper
+
+// export default redux form helper to connect component to reducer, first arument object key property validate set to validate, and form set to unique string, second argument PostsNew
 
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
@@ -64,6 +66,11 @@ class PostsNew extends Component{
 	}
 }
 
+function validate(){
+
+}
+
 export default reduxForm({
+	validate: validate,
 	form: 'PostsNewForm'
 })(PostsNew);
