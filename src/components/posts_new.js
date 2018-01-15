@@ -23,8 +23,10 @@
 					// name property set to tags
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
 
-// create function validate to pass to reduxForm helper
-
+// create function validate to pass to reduxForm helper, takes argument values
+	// const error set to an empty object
+	//  validate the inputs from values
+	// return error object, if empty form can submit, otherwise fails validation
 // export default redux form helper to connect component to reducer, first arument object key property validate set to validate, and form set to unique string, second argument PostsNew
 
 import React, { Component } from 'react';
@@ -65,9 +67,13 @@ class PostsNew extends Component{
 		);
 	}
 }
-
-function validate(){
-
+// whenever user submits for, presses enter for example, validate will be called
+// console logging values would return an object with key title categories and post content and corresponding values
+function validate(values){
+	const errors = {};
+	if(!values.title){
+		errors.title = "Enter a title";
+	}
 }
 
 export default reduxForm({
