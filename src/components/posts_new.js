@@ -14,9 +14,11 @@ import { Field, reduxForm } from 'redux-form';
 class PostsNew extends Component{
 	render(){
 		return(
-			<div>New Posts</div>
+			<div>New Posts</div> // comment to clear syntax highlighting
 		);
 	}
 }
 
-export default PostsNew;
+export default reduxForm({
+	form: 'PostsNewForm'
+})(PostsNew);
