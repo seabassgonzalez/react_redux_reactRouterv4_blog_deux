@@ -11,9 +11,15 @@
 		// return
 			// form
 				// Field component with 
+					// label Post Title
 					// name property set to title
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTitleField
 				// Field component with 
+					// label Tags
+					// name property set to tags
+					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
+				// Field component with 
+					// label Post Content
 					// name property set to tags
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
 
@@ -39,13 +45,18 @@ class PostsNew extends Component{
 		return(
 			<form>
 				<Field
-					label="Title"
+					label="Post Title"
 					name="title"
 					component={this.renderField}
 				/> 
 				<Field
 					label="Tags"
 					name="tags"
+					component={this.renderField}
+				/>
+				<Field
+					label="Post Content"
+					name="content"
 					component={this.renderField}
 				/>
 			</form> // comment to clean up syntax highlighting
