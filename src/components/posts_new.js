@@ -74,6 +74,12 @@ function validate(values){
 	if(!values.title){
 		errors.title = "Enter a title";
 	}
+	if(!values.categories){
+		errors.categories = "Enter some categories";
+	}
+	if(!values.content){
+		errors.content = "Enter some content";
+	}
 }
 
 export default reduxForm({
