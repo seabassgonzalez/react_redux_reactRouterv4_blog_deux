@@ -15,8 +15,8 @@
 					// name property set to title
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTitleField
 				// Field component with 
-					// label Tags
-					// name property set to tags
+					// label Categories
+					// name property set to categories
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
 				// Field component with 
 					// label Post Content
@@ -50,8 +50,8 @@ class PostsNew extends Component{
 					component={this.renderField}
 				/> 
 				<Field
-					label="Tags"
-					name="tags"
+					label="Categories"
+					name="categories"
 					component={this.renderField}
 				/>
 				<Field
