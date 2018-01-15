@@ -71,6 +71,6 @@ function validate(){
 }
 
 export default reduxForm({
-	validate: validate,
+	validate,
 	form: 'PostsNewForm'
 })(PostsNew);
