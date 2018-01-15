@@ -4,8 +4,9 @@
 // class PostsNew extends Component
 	// create function renderTitleField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
 		// return
-			// div
-				// input with property {...field.input}
+			// div bootstrap className form-group
+				// Label Title
+				// input with property {...field.input} bootstrap className form-control
 	// render
 		// return
 			// form
@@ -21,8 +22,11 @@ import { Field, reduxForm } from 'redux-form';
 class PostsNew extends Component{
 	renderTitleField(field){
 		return(
-			<div>
+			<div className="form-group">
+				<label>Title</label>
 				<input
+					className="form-control"
+					type="text"
 					{...field.input}
 				/>
 			</div> // comment to clear syntax highlighting
