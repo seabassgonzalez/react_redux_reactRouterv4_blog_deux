@@ -25,7 +25,12 @@
 
 // create function validate to pass to reduxForm helper, takes argument values
 	// const error set to an empty object
-	//  validate the inputs from values
+	//  if no values.title -- validate the inputs from values -- can add stipulations like string length
+		// set errors.title to a message
+	//  if no values.categories -- validate the inputs from values
+		// set errors.categories to a message
+	//  if no values.content -- validate the inputs from values
+		// set errors.content to a message
 	// return error object, if empty form can submit, otherwise fails validation
 // export default redux form helper to connect component to reducer, first arument object key property validate set to validate, and form set to unique string, second argument PostsNew
 
@@ -71,8 +76,8 @@ class PostsNew extends Component{
 // console logging values would return an object with key title categories and post content and corresponding values
 function validate(values){
 	const errors = {};
-	if(!values.title){
-		errors.title = "Enter a title";
+	if(!values.title || values.title.length < 3){
+		errors.title = "Enter a title that is at least 3 characters";
 	}
 	if(!values.categories){
 		errors.categories = "Enter some categories";
