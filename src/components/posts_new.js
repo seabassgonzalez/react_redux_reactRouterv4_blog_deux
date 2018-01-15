@@ -7,12 +7,20 @@
 			// div bootstrap className form-group
 				// Label Title
 				// input with property {...field.input} bootstrap className form-control
+	// create renderTagsField function
+		// return
+			// div
+				// label title
+				// input
 	// render
 		// return
 			// form
 				// Field component with 
-					// name property
-					// component property set to a function that returns jsx - will refer to callback and put function above
+					// name property set to title
+					// component property set to a function that returns jsx - will refer to callback and put function above renderTitleField
+				// Field component with 
+					// name property set to tags
+					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
 
 // export default redux form helper to connect component to reducer, first arument object key property form set to unique string, second argument PostsNew
 
@@ -32,12 +40,19 @@ class PostsNew extends Component{
 			</div> // comment to clear syntax highlighting
 		);
 	}
+	renderTagsField(){
+		
+	}
 	render(){
 		return(
 			<form>
 				<Field
 					name="title"
 					component={this.renderTitleField}
+				/>
+				<Field
+					name="tags"
+					component={this.renderTagsField}
 				/>
 			</form> // comment to clean up syntax highlighting
 		);
