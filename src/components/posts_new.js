@@ -4,9 +4,10 @@
 // class PostsNew extends Component
 	// render
 		// return
-			// div new Posts
+			// form
+				// Field component with name property
 
-// export default PostsNew
+// export default redux form helper to connect component to reducer, first arument object key property form set to unique string, second argument PostsNew
 
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
@@ -14,7 +15,12 @@ import { Field, reduxForm } from 'redux-form';
 class PostsNew extends Component{
 	render(){
 		return(
-			<div>New Posts</div> // comment to clear syntax highlighting
+			<form>
+				<Field
+					name="title"
+					component={}
+				/>
+			</form> // comment to clean up syntax highlighting
 		);
 	}
 }
