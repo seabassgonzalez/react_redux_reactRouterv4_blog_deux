@@ -8,9 +8,12 @@
 				// Label Title
 				// input with property {...field.input} bootstrap className form-control
 			// reference meta.error property automatically added to field object from validate function, reference it here to show errors
+	// create function onSubmit called with object values
+		// console.log values to check values		
 	// render
 		// return
-			// form
+			// create const to store object handleSubmit set to this.props
+			// form with onSubmit property set to an object with handleSubmit passed in, pass call to this.onSubmit.bind(this)
 				// Field component with 
 					// label Post Title
 					// name property set to title
@@ -52,9 +55,13 @@ class PostsNew extends Component{
 			</div> // comment to clear syntax highlighting
 		);
 	}
+	onSubmit(values){
+		console.log(values);
+	}
 	render(){
+		const { handleSubmit } = this.props;
 		return(
-			<form>
+			<form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
 				<Field
 					label="Post Title"
 					name="title"
@@ -88,6 +95,7 @@ function validate(values){
 	if(!values.content){
 		errors.content = "Enter some content";
 	}
+	// if errors is empty, form fine to submit, otherwise redux assums invalid
 	return errors;
 }
 
