@@ -8,6 +8,7 @@
 				// Label Title
 				// input with property {...field.input} bootstrap className form-control
 			// reference meta.error property automatically added to field object from validate function, reference it here to show errors
+			// can implement a ternary expression checking if field.meta has been touched, render field.meta.error if so, empty string if not
 	// create function onSubmit called with object values
 		// console.log values to check values		
 	// render
@@ -51,7 +52,7 @@ class PostsNew extends Component{
 					type="text"
 					{...field.input}
 				/>
-				{field.meta.error}
+				{field.meta.touched ? field.meta.error : ''}
 			</div> // comment to clear syntax highlighting
 		);
 	}
