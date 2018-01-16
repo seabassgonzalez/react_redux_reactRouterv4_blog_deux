@@ -1,5 +1,6 @@
 // import React and Component from react
 // import Field and reduxForm from redux-form
+// import Link from react-router-dom
 
 // class PostsNew extends Component
 	// create function renderField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
@@ -32,6 +33,7 @@
 					// name property set to tags
 					// component property set to a function that returns jsx - will refer to callback and put function above renderTagsField
 				// button type submit classname btn btn-primary value Submit
+				// Link component to="/" className btn btn-danger to serve as a cancel button
 // create function validate to pass to reduxForm helper, takes argument values
 	// const error set to an empty object
 	//  if no values.title -- validate the inputs from values -- can add stipulations like string length
@@ -45,6 +47,7 @@
 
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { Link } from 'react-router-dom';
 
 class PostsNew extends Component{
 	renderField(field){
@@ -88,6 +91,7 @@ class PostsNew extends Component{
 					component={this.renderField}
 				/>
 				<button type="submit" className="btn btn-primary">Submit</button>
+				<Link to="/" className="btn btn-danger">Cancel</Link>
 			</form> // comment to clean up syntax highlighting
 		);
 	}
