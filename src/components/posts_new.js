@@ -48,9 +48,9 @@ import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component{
 	renderField(field){
-		const { meta } = field;
-		const className = `form-group ${meta.touched && meta.error ? 'has-danger' : ''}`;
-		const inputClassName = `form-control ${meta.touched && meta.error ? 'form-control-danger is-invalid' : ''}`;
+		const { meta: { touched, error} } = field;
+		const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+		const inputClassName = `form-control ${touched && error ? 'form-control-danger is-invalid' : ''}`;
 		return(
 			<div className={className}>
 				<label className="form-control-label">{field.label}</label>
@@ -60,7 +60,7 @@ class PostsNew extends Component{
 					{...field.input}
 				/>
 				<div className="invalid-feedback">
-					{meta.touched ? meta.error : ''}
+					{touched ? error : ''}
 				</div>
 			</div> // comment to clear syntax highlighting
 		);
