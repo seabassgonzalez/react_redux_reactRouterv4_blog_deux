@@ -3,7 +3,9 @@
 
 // class PostsNew extends Component
 	// create function renderField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
+		// save constant {meta} to destructure the template string using meta.field so often below
 		// save const className string for styling only when touched and error -- template form-group ${field.meta.touched && field.meta.error} ternary to use either has-danger or nothing, an empty string
+		// save const className string for styling only when touched and error -- template form-control ${field.meta.touched && field.meta.error} ternary to use either form-control-danger or nothing, an empty string
 		// return
 			// div bootstrap className form-group and has-danger
 				// Label Title
@@ -46,8 +48,9 @@ import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component{
 	renderField(field){
-		const className = `form-group ${field.meta.touched && field.meta.error ? 'has-danger' : ''}`;
-		const inputClassName = `form-control ${field.meta.touched && field.meta.error ? 'form-control-danger is-invalid' : ''}`;
+		const { meta } = field;
+		const className = `form-group ${meta.touched && meta.error ? 'has-danger' : ''}`;
+		const inputClassName = `form-control ${meta.touched && meta.error ? 'form-control-danger is-invalid' : ''}`;
 		return(
 			<div className={className}>
 				<label className="form-control-label">{field.label}</label>
@@ -57,7 +60,7 @@ class PostsNew extends Component{
 					{...field.input}
 				/>
 				<div className="invalid-feedback">
-					{field.meta.touched ? field.meta.error : ''}
+					{meta.touched ? meta.error : ''}
 				</div>
 			</div> // comment to clear syntax highlighting
 		);
