@@ -1,6 +1,8 @@
 // import React and Component from react
 // import Field and reduxForm from redux-form
 // import Link from react-router-dom
+// import Connect from react-redux
+// import createPost from '../actions/index'
 
 // class PostsNew extends Component
 	// create function renderField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
@@ -14,7 +16,7 @@
 			// div bootstrap className text-help to style as red
 				// reference meta.error property automatically added to field object from validate function, reference it here to show errors
 				// can implement a ternary expression checking if field.meta has been touched, render field.meta.error if so, empty string if not
-	// create function onSubmit called with object values
+	// create function onSubmit called with object values, calls action creator that passes values 
 		// console.log values to check values		
 	// render
 		// return
