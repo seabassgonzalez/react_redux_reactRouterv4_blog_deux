@@ -4,11 +4,12 @@
 // class PostsNew extends Component
 	// create function renderField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
 		// return
-			// div bootstrap className form-group
+			// div bootstrap className form-group and has-danger
 				// Label Title
 				// input with property {...field.input} bootstrap className form-control
-			// reference meta.error property automatically added to field object from validate function, reference it here to show errors
-			// can implement a ternary expression checking if field.meta has been touched, render field.meta.error if so, empty string if not
+			// div bootstrap className text-help to style as red
+				// reference meta.error property automatically added to field object from validate function, reference it here to show errors
+				// can implement a ternary expression checking if field.meta has been touched, render field.meta.error if so, empty string if not
 	// create function onSubmit called with object values
 		// console.log values to check values		
 	// render
@@ -45,14 +46,16 @@ import { Field, reduxForm } from 'redux-form';
 class PostsNew extends Component{
 	renderField(field){
 		return(
-			<div className="form-group">
-				<label>{field.label}</label>
+			<div className="form-group has-danger">
+				<label className="form-control-label">{field.label}</label>
 				<input
-					className="form-control"
+					className="form-control form-control-danger is-invalid"
 					type="text"
 					{...field.input}
 				/>
-				{field.meta.touched ? field.meta.error : ''}
+				<div className="invalid-feedback">
+					{field.meta.touched ? field.meta.error : ''}
+				</div>
 			</div> // comment to clear syntax highlighting
 		);
 	}
