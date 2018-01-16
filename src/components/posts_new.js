@@ -3,6 +3,7 @@
 
 // class PostsNew extends Component
 	// create function renderField to return jsx, take argument field with event handlers we need to wire up to jsx we're returning to field component
+		// save const className string for styling only when touched and error -- template form-group ${field.meta.touched && field.meta.error} ternary to use either has-danger or nothing, an empty string
 		// return
 			// div bootstrap className form-group and has-danger
 				// Label Title
@@ -45,11 +46,13 @@ import { Field, reduxForm } from 'redux-form';
 
 class PostsNew extends Component{
 	renderField(field){
+		const className = `form-group ${field.meta.touched && field.meta.error ? 'has-danger' : ''}`;
+		const inputClassName = `form-control ${field.meta.touched && field.meta.error ? 'form-control-danger is-invalid' : ''}`;
 		return(
-			<div className="form-group has-danger">
+			<div className={className}>
 				<label className="form-control-label">{field.label}</label>
 				<input
-					className="form-control form-control-danger is-invalid"
+					className={inputClassName}
 					type="text"
 					{...field.input}
 				/>
