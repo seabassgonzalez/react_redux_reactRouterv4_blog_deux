@@ -9,7 +9,8 @@
 	// renderPosts
 		// returns map over object containing posts using lodash, function that takes each post and makes an li for each
 			// li className list-group-item key set to reference to post.id
-				// reference to post.title
+				// Link tag to navigate to post show for specific post -- use template string to access variable id
+					// reference to post.title
 	// render
 		// return
 			// div 
@@ -38,8 +39,10 @@ class PostsIndex extends Component {
 		return _.map(this.props.posts, post => {
 			return(
 				<li className="list-group-item" key={post.id}>
-					{post.title}
-				</li> // comment to clean up syntax highlighting
+					<Link to={`/posts/${post.id}`}> 
+						{post.title} 
+					</Link>
+				</li> // comment to clean up syntax highlighting` and backtick for same
 			);
 		});
 	}
