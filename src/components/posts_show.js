@@ -1,6 +1,6 @@
 // import React and Component from react
 // import connect from react-redux
-// import fetchPost action creator from actions
+// import fetchPost and deletePost action creators from actions
 // import Link from react-router-dom
 
 // create class PostsShow extending Component
@@ -31,7 +31,7 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPost } from '../actions';
+import { fetchPost, deletePost } from '../actions';
 import { Link } from 'react-router-dom';
 
 class PostsShow extends Component {
@@ -72,4 +72,4 @@ function mapStateToProps({ posts }, ownProps){
 	return { post: posts[ownProps.match.params.id] };
 }
 
-export default connect(mapStateToProps, { fetchPost })(PostsShow);
+export default connect(mapStateToProps, { fetchPost, deletePost })(PostsShow);
