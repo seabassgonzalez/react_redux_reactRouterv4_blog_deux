@@ -43,7 +43,9 @@ class PostsShow extends Component {
 	}
 	onDeleteClick(){
 		const { id } = this.props.match.params;
-		this.props.deletePost(id);
+		this.props.deletePost(id), () => {
+			this.props.history.push('/');
+		};
 	}
 	render(){
 		// this.props === ownProps, so can access in mapStateToProps as ownProps, called that by convention
