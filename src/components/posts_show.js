@@ -8,13 +8,18 @@
 		// wrap in if statement checking if post has been fetched already to save api calls
 			// access prop from react-router -- this.props.match.params.id -- save as a const
 			// use this.props.fetchPost() to call fetchPost on props specifically id object just made
+	// onDeleteClick method to hold api delete call
+		// retrieve id off of params object provided by react router
+		// call this.props.deletePost action creator, action creator found on this.props, needs to know id of post to delete
 	// render
 		// create const post = this.props since we access it often, destructured
 		// first check if post has been passed -- allows for promise to resolve without immediately trying to render a property of something that does not exist-- will rerender when available
 			// if not return a div that says loading
 		// return	
-			// div 
+			// div
 				// Link component to return to root /, style with bootstrap as button
+				// button for deleting post classname btn btn-danger and pull-xs-right
+					// runs onClick event handler that calls this.onDeleteClick.bind(this) ondelete handler bound to this
 				// h3 post.title
 				// h6 Categories: post.categories
 				// p post.content
@@ -36,6 +41,10 @@ class PostsShow extends Component {
 			this.props.fetchPost(id); // made accessible by connect below
 		}
 	}
+	onDeleteClick(){
+		const id = this.props.match.params.id;
+		this.props.deletePost(id);
+	}
 	render(){
 		// this.props === ownProps, so can access in mapStateToProps as ownProps, called that by convention
 		const { post } = this.props;
@@ -45,6 +54,12 @@ class PostsShow extends Component {
 		return(
 			<div>
 				<Link to="/" className="btn btn-primary">Back to Index</Link>
+				<button
+					className="btn btn-danger pull-xs-right"
+					onClick={this.onDeleteClick.bind(this)}
+				>
+					Delete Post
+				</button>
 				<h3>{post.title}</h3>
 				<h6>Categories: {post.categories}</h6>
 				<p>{post.content}</p>
