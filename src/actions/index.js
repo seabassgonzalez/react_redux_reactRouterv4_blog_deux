@@ -18,6 +18,12 @@
 			// type
 			// payload holds request
 
+// export function fetchPost receiving an id for a particular post
+	// make axios get request to api to get particular post info
+		// return
+			// type
+			// payload
+
 import axios from 'axios';
 
 export const FETCH_POSTS = 'fetch_posts';
@@ -42,4 +48,8 @@ export function createPost(values, callback){
 		type: CREATE_POST,
 		payload: request
 	};
+}
+
+export function fetchPost(id){
+	const requst = axios.get(`${ROOT_URL}`);
 }
