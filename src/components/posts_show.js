@@ -1,6 +1,7 @@
 // import React and Component from react
 // import connect from react-redux
 // import fetchPost action creator from actions
+// import Link from react-router-dom
 
 // create class PostsShow extending Component
 	// use componentDidMount lifecycle method so renders at right time
@@ -12,6 +13,7 @@
 			// if not return a div that says loading
 		// return	
 			// div 
+				// Link component to return to root /, style with bootstrap as button
 				// h3 post.title
 				// h6 Categories: post.categories
 				// p post.content
@@ -24,6 +26,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchPost } from '../actions';
+import { Link } from 'react-router-dom';
 
 class PostsShow extends Component {
 	componentDidMount(){
@@ -38,6 +41,7 @@ class PostsShow extends Component {
 		}
 		return(
 			<div>
+				<Link to="/" className="btn btn-primary">Back to Index</Link>
 				<h3>{post.title}</h3>
 				<h6>Categories: {post.categories}</h6>
 				<p>{post.content}</p>
