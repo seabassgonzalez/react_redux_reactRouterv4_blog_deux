@@ -4,6 +4,7 @@
 // export const FETCH_POSTS stores fetch_posts string
 // export const FETCH_POST to store fetch_post string type
 // export const CREATE_POST to store create_post string
+// export const DELETE_POST to store delete_post string
 
 // create const to hold root url
 // create const to hold api key
@@ -26,11 +27,18 @@
 			// type
 			// payload
 
+// export function deletePost receiving id to delete
+	// make axios delete request to api
+		// return
+			// type
+			// payload set to id of specific post
+
 import axios from 'axios';
 
 export const FETCH_POSTS = 'fetch_posts';
 export const FETCH_POST = 'fetch_post';
 export const CREATE_POST = 'create_post';
+export const DELETE_POST = 'delete_post';
 
 const ROOT_URL = 'http://reduxblog.herokuapp.com/api';
 const API_KEY = '?key=SEABASSGONZALEZ01';
@@ -57,5 +65,13 @@ export function fetchPost(id){
 	return{
 		type: FETCH_POST,
 		payload: request
+	};
+}
+
+export function deletePost(id){
+	const request = axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`);
+	return{
+		type: DELETE_POST,
+		payload: id
 	};
 }
