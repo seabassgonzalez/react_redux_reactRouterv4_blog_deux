@@ -1,11 +1,13 @@
 // import React and Component from react
+// import connect from react-redux
+// import fetchPost action creator from actions
 
 // create class PostsShow extending Component
 	// render
 		// return	
 			// div simply saying Post Show
 
-// export default PostsShow
+// export default use connect()(PostsShow)
 
 import React, { Component } from 'react';
 
@@ -19,4 +21,4 @@ class PostsShow extends Component {
 	}
 }
 
-export default PostsShow;
+export default connect()(PostsShow);
