@@ -16,8 +16,9 @@
 			// div bootstrap className text-help to style as red
 				// reference meta.error property automatically added to field object from validate function, reference it here to show errors
 				// can implement a ternary expression checking if field.meta has been touched, render field.meta.error if so, empty string if not
-	// create function onSubmit called with object values, calls action creator that passes values 
+	// create function onSubmit called with object values, calls imported action creator createPost() that passes values 
 		// console.log values to check values		
+		// call to createPost on props this.props.createPost passing in values
 	// render
 		// return
 			// create const to store object handleSubmit set to this.props
@@ -74,6 +75,7 @@ class PostsNew extends Component{
 	}
 	onSubmit(values){
 		console.log(values);
+		this.props.createPost(values);
 	}
 	render(){
 		const { handleSubmit } = this.props;
@@ -122,4 +124,4 @@ export default reduxForm({
 	form: 'PostsNewForm'
 })(
 	connect(null, { createPost })(PostsNew)
-	;
+);
