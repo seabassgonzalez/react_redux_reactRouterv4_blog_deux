@@ -11,6 +11,7 @@
 	// onDeleteClick method to hold api delete call
 		// retrieve id off of params object provided by react router
 		// call this.props.deletePost action creator, action creator found on this.props, needs to know id of post to delete
+		// pass this.props.deletePost a call back function that uses this.props.history to 
 	// render
 		// create const post = this.props since we access it often, destructured
 		// first check if post has been passed -- allows for promise to resolve without immediately trying to render a property of something that does not exist-- will rerender when available
@@ -43,9 +44,9 @@ class PostsShow extends Component {
 	}
 	onDeleteClick(){
 		const { id } = this.props.match.params;
-		this.props.deletePost(id), () => {
+		this.props.deletePost((id), () => {
 			this.props.history.push('/');
-		};
+		});
 	}
 	render(){
 		// this.props === ownProps, so can access in mapStateToProps as ownProps, called that by convention
