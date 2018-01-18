@@ -51,5 +51,5 @@ export function createPost(values, callback){
 }
 
 export function fetchPost(id){
-	const requst = axios.get(`${ROOT_URL}`);
+	const requst = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
 }
