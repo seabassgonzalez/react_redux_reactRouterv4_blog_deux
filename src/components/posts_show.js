@@ -5,8 +5,9 @@
 
 // create class PostsShow extending Component
 	// use componentDidMount lifecycle method so renders at right time
-		// access prop from react-router -- this.props.match.params.id -- save as a const
-		// use this.props.fetchPost() to call fetchPost on props specifically id object just made
+		// wrap in if statement checking if post has been fetched already to save api calls
+			// access prop from react-router -- this.props.match.params.id -- save as a const
+			// use this.props.fetchPost() to call fetchPost on props specifically id object just made
 	// render
 		// create const post = this.props since we access it often, destructured
 		// first check if post has been passed -- allows for promise to resolve without immediately trying to render a property of something that does not exist-- will rerender when available
@@ -30,8 +31,10 @@ import { Link } from 'react-router-dom';
 
 class PostsShow extends Component {
 	componentDidMount(){
-		const { id } = this.props.match.params; // props.match.params available from react-router -- identical to const id = this.props.match.params.id
-		this.props.fetchPost(id); // made accessible by connect below
+		if(!this.props.post){
+			const { id } = this.props.match.params; // props.match.params available from react-router -- identical to const id = this.props.match.params.id
+			this.props.fetchPost(id); // made accessible by connect below
+		}
 	}
 	render(){
 		// this.props === ownProps, so can access in mapStateToProps as ownProps, called that by convention
