@@ -8,6 +8,8 @@
 		// use this.props.fetchPost() to call fetchPost on props specifically id object just made
 	// render
 		// create const post = this.props since we access it often, destructured
+		// first check if post has been passed
+			// if not return a div that says loading
 		// return	
 			// div 
 				// h3 post.title
@@ -31,6 +33,9 @@ class PostsShow extends Component {
 	render(){
 		// this.props === ownProps, so can access in mapStateToProps as ownProps, called that by convention
 		const { post } = this.props;
+		if(!post){
+			return <div>Loading...</div>; // comment to clear up syntax highlighting
+		}
 		return(
 			<div>
 				<h3>{post.title}</h3>
