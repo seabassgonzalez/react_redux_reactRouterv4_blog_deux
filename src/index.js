@@ -17,8 +17,9 @@
 		// BrowserRouter component
 		  // single div child
 		  	// Switch component wrapper to manage routes
-		        // route for / showing PostsIndex component
 		        // route for new Posts showing PostsNew component
+		        // route for new Posts showing specific post by id component
+		        // route for / showing PostsIndex component
 	// at DOM container component
 
 	

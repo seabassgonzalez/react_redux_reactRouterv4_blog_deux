@@ -22,15 +22,15 @@ import { fetchPost } from '../actions';
 
 class PostsShow extends Component {
 	componentDidMount(){
-		const { id } = this.props.match.params.id;
-		this.props.fetchPost(id);
+		const { id } = this.props.match.params.id; // props.match.params available from react-router
+		this.props.fetchPost(id); // made accessible by connect below
 	}
 	render(){
-		posts[this.props.match.params.id]
+		posts[this.props.match.params.id]; // would render post we want to show specifically
 		return(
 			<div>
 				Posts Show
-			</div>
+			</div> // comment to clear up syntax highlighting
 		);
 	}
 }
