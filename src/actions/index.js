@@ -12,7 +12,7 @@
 		// type FETCH_POSTS
 		// payload set to request
 
-// export function createPost receiving values object -- the blog post with title categories and content
+// export function createPost receiving values object-- the blog post with title categories and content-- and callback so that it calls callback manually when completed using a promise 
 	// make request to api with axios
 		// return an action
 			// type
@@ -34,8 +34,9 @@ export function fetchPosts(){
 	};
 }
 
-export function createPost(values){
-	const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values);
+export function createPost(values, callback){
+	const request = axios.post(`${ROOT_URL}/posts${API_KEY}`, values)
+		.then(() => callback());
 
 	return{
 		type: CREATE_POST,
