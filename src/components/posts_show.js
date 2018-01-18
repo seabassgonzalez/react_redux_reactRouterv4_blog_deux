@@ -4,6 +4,8 @@
 
 // create class PostsShow extending Component
 	// use componentDidMount lifecycle method so renders at right time
+		// access prop from react-router -- this.props.match.params.id
+		// use this.props.fetchPost() to call fetchPost on props
 	// render
 		// return	
 			// div simply saying Post Show
@@ -19,6 +21,7 @@ import { fetchPost } from '../actions';
 
 class PostsShow extends Component {
 	componentDidMount(){
+		this.props.match.params.id;
 		this.props.fetchPost();
 	}
 	render(){
