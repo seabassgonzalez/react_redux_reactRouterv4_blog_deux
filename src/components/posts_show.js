@@ -27,7 +27,7 @@ import { fetchPost } from '../actions';
 
 class PostsShow extends Component {
 	componentDidMount(){
-		const { id } = this.props.match.params; // props.match.params available from react-router
+		const id = this.props.match.params.id; // props.match.params available from react-router
 		this.props.fetchPost(id); // made accessible by connect below
 	}
 	render(){
