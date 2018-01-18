@@ -7,12 +7,11 @@
 		// access prop from react-router -- this.props.match.params.id -- save as a const
 		// use this.props.fetchPost() to call fetchPost on props specifically id object just made
 	// render
-		// posts[this.props.match.params.id]
 		// return	
 			// div simply saying Post Show
 
-// define mapStateToProps function so we can use post off application level state to be used in component -- called with state object, posts piece of state in particular
-	// return { posts }
+// define mapStateToProps function so we can use post off application level state to be used in component -- called with state object, posts piece of state in particular, second argument is ownProps === component's this.props
+	// return object where post set to specific posts[ownProps.match.params.id]	
 
 // export default use connect()(PostsShow)
 
@@ -26,7 +25,7 @@ class PostsShow extends Component {
 		this.props.fetchPost(id); // made accessible by connect below
 	}
 	render(){
-		posts[this.props.match.params.id]; // would render post we want to show specifically
+		// this.props === ownProps, so can access in mapStateToProps as ownProps, called that by convention
 		return(
 			<div>
 				Posts Show
@@ -35,8 +34,8 @@ class PostsShow extends Component {
 	}
 }
 
-function mapStateToProps({ posts }){
-	return { posts };
+function mapStateToProps({ posts }, ownProps){
+	return { post: posts[ownProps.match.params.id] };
 }
 
-export default connect(null, { fetchPost })(PostsShow);
+export default connect(mapStateToProps, { fetchPost })(PostsShow);
