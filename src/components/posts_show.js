@@ -8,7 +8,7 @@
 		// use this.props.fetchPost() to call fetchPost on props specifically id object just made
 	// render
 		// create const post = this.props since we access it often, destructured
-		// first check if post has been passed
+		// first check if post has been passed -- allows for promise to resolve without immediately trying to render a property of something that does not exist-- will rerender when available
 			// if not return a div that says loading
 		// return	
 			// div 
